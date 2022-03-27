@@ -20,6 +20,6 @@ jobs:
       - name: Run tests
         run: |
           xmake --version
-          xmake f -m release
+          xmake f -m release -y
           xmake
           xmake run test
