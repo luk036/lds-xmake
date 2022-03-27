@@ -1,3 +1,5 @@
+set_languages("c++17")
+
 add_rules("mode.debug", "mode.release", "mode.coverage")
 add_requires("conan::fmt/8.1.1", {alias = "fmt"})
 add_requires("conan::ms-gsl/3.1.0", {alias = "ms-gsl"})
