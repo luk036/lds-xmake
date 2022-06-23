@@ -1,10 +1,10 @@
 set_languages("c++17")
 
 add_rules("mode.debug", "mode.release", "mode.coverage")
-add_requires("conan::fmt/8.1.1", {alias = "fmt"})
-add_requires("conan::ms-gsl/3.1.0", {alias = "ms-gsl"})
-add_requires("conan::doctest/2.4.6", {alias = "doctest"})
-add_requires("conan::xtensor/0.23.10", {alias = "xtensor"})
+add_requires("fmt", {alias = "fmt"})
+add_requires("gsl", {alias = "ms-gsl"})
+add_requires("doctest", {alias = "doctest"})
+add_requires("xtensor", {alias = "xtensor"})
 
 target("Lds")
     set_kind("static")
