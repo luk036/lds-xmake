@@ -8,7 +8,7 @@ TEST_CASE("sphere3") {
     unsigned base[] = {2, 3, 5, 7};
     auto sp3gen = lds::sphere3(base);
     auto [x1, x2, x3, x4] = sp3gen();
-    auto xx1 = x1; // make clang compiler happy
+    auto xx1 = x1;  // make clang compiler happy
     CHECK_EQ(xx1, doctest::Approx(0.8966646826));
 }
 
