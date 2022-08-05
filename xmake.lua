@@ -1,7 +1,7 @@
 set_languages("c++17")
 
 add_rules("mode.debug", "mode.release", "mode.coverage")
-add_requires("fmt", {alias = "fmt"})
+-- add_requires("fmt", {alias = "fmt"})
 add_requires("gsl", {alias = "ms-gsl"})
 add_requires("doctest", {alias = "doctest"})
 add_requires("xtensor", {alias = "xtensor"})
@@ -13,15 +13,12 @@ target("Lds")
     add_packages("ms-gsl")
     add_packages("xtensor")
 
-target("test")
+target("test_lds")
     set_kind("binary")
     add_deps("Lds")
     add_includedirs("include", {public = true})
     add_files("tests/*.cpp")
-    add_packages("fmt")
-    add_packages("ms-gsl")
-    add_packages("doctest")
-    add_packages("xtensor")
+    add_packages("ms-gsl", "doctest", "xtensor")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
