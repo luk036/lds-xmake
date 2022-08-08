@@ -1,6 +1,6 @@
 #include <doctest/doctest.h>  // for Approx, ResultBuilder, TestCase, CHECK
 
-#include <gsl/span>               // for span
+#include <gsl/gsl>               // for span
 #include <lds/low_discr_seq.hpp>  // for circle, halton, sphere, sphere3_hopf
 
 TEST_CASE("circle") {

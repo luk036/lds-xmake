@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cmath>  // import sin, cos, acos, sqrt
-#include <gsl/span>
+#include <gsl/gsl>
 #include <tuple>
 
 namespace lds {

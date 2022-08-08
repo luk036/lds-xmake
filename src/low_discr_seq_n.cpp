@@ -2,7 +2,7 @@
 
 #include <cassert>                      // for assert
 #include <cmath>                        // for cos, sin, sqrt
-#include <gsl/span>                     // for span
+#include <gsl/gsl>                     // for span
 #include <lds/low_discr_seq_n.hpp>      // for sphere_n, cylin_n, cylin_2
 #include <memory>                       // for unique_ptr, make_unique
 #include <tuple>                        // for tuple
