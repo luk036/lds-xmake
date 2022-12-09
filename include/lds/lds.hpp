@@ -22,15 +22,15 @@ namespace lds2 {
      * @return double
      */
     inline auto vdc(size_t k, const size_t base) -> double {
-        auto vdc = 0.0;
+        auto res = 0.0;
         auto denom = 1.0;
         while (k != 0) {
             denom *= base;
             const auto remainder = k % base;
             k /= base;
-            vdc += remainder / denom;
+            res += remainder / denom;
         }
-        return vdc;
+        return res;
     }
 
     /**
