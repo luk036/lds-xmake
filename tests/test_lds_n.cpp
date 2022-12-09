@@ -1,6 +1,6 @@
 #include <doctest/doctest.h>  // for Approx, ResultBuilder, TestCase
 
-#include <gsl/gsl>        // for span
+#include <gsl/span>       // for span
 #include <lds/lds_n.hpp>  // for cylin_n, halton_n, sphere3, sphere_n
 #include <vector>         // for vector
 

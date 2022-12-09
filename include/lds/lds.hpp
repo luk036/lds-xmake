@@ -2,7 +2,7 @@
 
 #include <array>
 #include <cmath>
-#include <gsl/gsl>
+#include <gsl/span>
 
 namespace lds2 {
 

@@ -4,7 +4,7 @@
 
 #include <array>        // for array
 #include <cassert>      // for assert
-#include <gsl/gsl>      // for span
+#include <gsl/span>     // for span
 #include <memory>       // for unique_ptr, make_unique
 #include <type_traits>  // for move, remove_reference<>::type
 #include <variant>      // for visit, variant
