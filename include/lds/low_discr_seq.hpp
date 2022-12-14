@@ -11,8 +11,8 @@ namespace lds {
     /**
      * @brief van der Corput sequence
      *
-     * @param k
-     * @param base
+     * @param[in] k
+     * @param[in] base
      * @return double
      */
     inline constexpr auto vdc(unsigned k, unsigned base = 2) noexcept -> double {
@@ -40,7 +40,7 @@ namespace lds {
         /**
          * @brief Construct a new vdcorput object
          *
-         * @param base
+         * @param[in] base
          */
         explicit constexpr vdcorput(unsigned base = 2) noexcept : _base{base} {}
 
@@ -57,7 +57,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void { this->_count = seed; }
     };
@@ -75,7 +75,7 @@ namespace lds {
         /**
          * @brief Construct a new halton object
          *
-         * @param base
+         * @param[in] base
          */
         explicit constexpr halton(gsl::span<const unsigned> base) noexcept
             : _vdc0(base[0]), _vdc1(base[1]) {}
@@ -90,7 +90,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void {
             this->_vdc0.reseed(seed);
@@ -110,7 +110,7 @@ namespace lds {
         /**
          * @brief Construct a new circle object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr explicit circle(unsigned base = 2) noexcept : _vdc(base) {}
 
@@ -127,7 +127,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void { this->_vdc.reseed(seed); }
     };
@@ -145,7 +145,7 @@ namespace lds {
         /**
          * @brief Construct a new sphere object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr sphere(gsl::span<const unsigned> base) noexcept
             : _vdc(base[0]), _cirgen(base[1]) {}
@@ -165,7 +165,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void {
             this->_cirgen.reseed(seed);
@@ -187,7 +187,7 @@ namespace lds {
         /**
          * @brief Construct a new sphere3 hopf object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr explicit sphere3_hopf(gsl::span<const unsigned> base) noexcept
             : _vdc0(base[0]), _vdc1(base[1]), _vdc2(base[2]) {}
@@ -214,7 +214,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void {
             this->_vdc0.reseed(seed);

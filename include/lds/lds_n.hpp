@@ -31,7 +31,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Halton N object
          *
-         * @param base
+         * @param[in] base
          */
         explicit HaltonN(span<const size_t> base) {
             for (const auto& b : base) {
@@ -55,7 +55,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void {
             for (auto& vdc : this->vdcs) {
@@ -68,7 +68,7 @@ namespace lds2 {
 
     using CylinVariant = std::variant<std::unique_ptr<Circle>, std::unique_ptr<CylinN> >;
 
-    /** Generate using cylindrical coordinate method */
+    /** @brief Generate using cylindrical coordinate method */
     class CylinN {
         Vdcorput vdc;
         CylinVariant c_gen;
@@ -77,7 +77,7 @@ namespace lds2 {
         /**
          * @brief Construct a new cylin n::cylin n object
          *
-         * @param base
+         * @param[in] base
          */
         explicit CylinN(span<const size_t> base) : vdc{base[0]} {
             const auto n = base.size();
@@ -97,7 +97,7 @@ namespace lds2 {
         auto pop() -> vector<double>;
     };
 
-    /** Generate Sphere-3 Halton sequence */
+    /** @brief Generate Sphere-3 Halton sequence */
     class Sphere3 {
         Vdcorput vdc;
         Sphere sphere2;
@@ -107,7 +107,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Sphere3 object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Sphere3(span<const size_t> base);
 
@@ -121,7 +121,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void {
             this->vdc.reseed(seed);
@@ -140,7 +140,7 @@ namespace lds2 {
 
     using SphereVariant = std::variant<std::unique_ptr<Sphere3>, std::unique_ptr<SphereN> >;
 
-    /** Generate Sphere-3 Halton sequence */
+    /** @brief Generate Sphere-3 Halton sequence */
     class SphereN {
         size_t n;
         Vdcorput vdc;
@@ -151,7 +151,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Sphere N object
          *
-         * @param base
+         * @param[in] base
          */
         explicit SphereN(span<const size_t> base);
 

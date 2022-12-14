@@ -17,8 +17,8 @@ namespace lds2 {
     /**
      * @brief Van der Corput sequence
      *
-     * @param k
-     * @param base
+     * @param[in] k
+     * @param[in] base
      * @return double
      */
     inline auto vdc(size_t k, const size_t base) -> double {
@@ -45,7 +45,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Vdcorput object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Vdcorput(size_t base) : count{0}, base{base} {}
 
@@ -62,7 +62,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          * @return auto
          */
         auto reseed(size_t seed) { this->count = seed; }
@@ -80,7 +80,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Halton object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Halton(span<const size_t> base) : vdc0(base[0]), vdc1(base[1]) {}
 
@@ -96,7 +96,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void {
             this->vdc0.reseed(seed);
@@ -115,7 +115,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Circle object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Circle(size_t base) : vdc(base) {}
 
@@ -132,7 +132,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void { this->vdc.reseed(seed); }
     };
@@ -149,7 +149,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Sphere object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Sphere(span<const size_t> base) : vdcgen(base[0]), cirgen(base[1]) {}
 
@@ -168,7 +168,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void {
             this->cirgen.reseed(seed);
@@ -189,7 +189,7 @@ namespace lds2 {
         /**
          * @brief Construct a new Sphere 3 Hopf object
          *
-         * @param base
+         * @param[in] base
          */
         explicit Sphere3Hopf(span<const size_t> base)
             : vdc0(base[0]), vdc1(base[1]), vdc2(base[2]) {}
@@ -216,7 +216,7 @@ namespace lds2 {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(size_t seed) -> void {
             this->vdc0.reseed(seed);

@@ -20,8 +20,8 @@ namespace lds {
         /**
          * @brief Construct a new halton n object
          *
-         * @param n
-         * @param base
+         * @param[in] n
+         * @param[in] base
          */
         halton_n(gsl::span<const unsigned> base) {
             for (auto&& b : base) {
@@ -45,7 +45,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         auto reseed(unsigned seed) -> void {
             for (auto& vdc : this->_vec_vdc) {
@@ -64,7 +64,7 @@ namespace lds {
         /**
          * @brief Construct a new sphere3 object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr explicit sphere3(gsl::span<const unsigned> base) noexcept
             : _vdc(base[0]), _sphere2(base.subspan(1, 2)) {}
@@ -94,7 +94,7 @@ namespace lds {
         /**
          * @brief Construct a new circle object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr explicit cylin_2(unsigned base = 2) noexcept : _vdc(base) {}
 
@@ -111,7 +111,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void { this->_vdc.reseed(seed); }
     };
@@ -126,8 +126,8 @@ namespace lds {
         /**
          * @brief Construct a new cylin n object
          *
-         * @param n dimension
-         * @param base sequence base
+         * @param[in] n dimension
+         * @param[in] base sequence base
          */
         cylin_n(gsl::span<const unsigned> base);
 
@@ -152,7 +152,7 @@ namespace lds {
         /**
          * @brief Construct a new sphere object
          *
-         * @param base
+         * @param[in] base
          */
         constexpr sphere_2(gsl::span<const unsigned> base) noexcept
             : _vdc(base[0]), _cirgen(base[1]) {}
@@ -172,7 +172,7 @@ namespace lds {
         /**
          * @brief
          *
-         * @param seed
+         * @param[in] seed
          */
         constexpr auto reseed(unsigned seed) noexcept -> void {
             this->_cirgen.reseed(seed);
@@ -193,8 +193,8 @@ namespace lds {
         /**
          * @brief Construct a new sphere n object
          *
-         * @param n dimension
-         * @param base sequence base
+         * @param[in] n dimension
+         * @param[in] base sequence base
          */
         sphere_n(gsl::span<const unsigned> base);
 

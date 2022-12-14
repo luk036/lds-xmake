@@ -71,8 +71,8 @@ namespace lds {
     /**
      * @brief Construct a new cylin n::cylin n object
      *
-     * @param n
-     * @param base
+     * @param[in] n
+     * @param[in] base
      */
     cylin_n::cylin_n(gsl::span<const unsigned> base) : _vdc(base[0]) {
         auto n = base.size();

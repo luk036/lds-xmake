@@ -79,7 +79,7 @@ namespace lds2 {
     /**
      * @brief Construct a new Sphere 3:: Sphere 3 object
      *
-     * @param base
+     * @param[in] base
      */
     Sphere3::Sphere3(span<const size_t> base) : vdc{base[0]}, sphere2{base.subspan(1, 2)} {}
 
@@ -101,7 +101,7 @@ namespace lds2 {
     /**
      * @brief Construct a new Sphere N:: Sphere N object
      *
-     * @param base
+     * @param[in] base
      */
     SphereN::SphereN(gsl::span<const size_t> base) : vdc{base[0]} {
         const auto m = base.size();
