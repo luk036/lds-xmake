@@ -2,7 +2,7 @@
 
 #include <cassert>                      // for assert
 #include <cmath>                        // for cos, sin, sqrt
-#include <gsl/gsl>                      // for span
+#include <gsl/span>                     // for span
 #include <lds/low_discr_seq_n.hpp>      // for sphere_n, cylin_n, cylin_2
 #include <memory>                       // for unique_ptr, make_unique
 #include <tuple>                        // for tuple
@@ -71,8 +71,8 @@ namespace lds {
     /**
      * @brief Construct a new cylin n::cylin n object
      *
-     * @param n
-     * @param base
+     * @param[in] n
+     * @param[in] base
      */
     cylin_n::cylin_n(gsl::span<const unsigned> base) : _vdc(base[0]) {
         auto n = base.size();
