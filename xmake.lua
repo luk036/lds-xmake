@@ -6,6 +6,10 @@ add_requires("microsoft-gsl", {alias = "ms-gsl"})
 add_requires("doctest", {alias = "doctest"})
 add_requires("xtensor", {alias = "xtensor"})
 
+if is_mode("coverage") then
+    add_cxflags("-ftest-coverage", "-fprofile-arcs", {force = true})
+end
+
 target("Lds")
     set_kind("static")
     add_includedirs("include", {public = true})
