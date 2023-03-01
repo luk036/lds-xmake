@@ -1,28 +1,21 @@
-set_languages("c++17")
+set_languages("c++14")
 
 add_rules("mode.debug", "mode.release", "mode.coverage")
 -- add_requires("fmt", {alias = "fmt"})
-add_requires("microsoft-gsl", {alias = "ms-gsl"})
+add_requires("microsoft-gsl", {alias = "ms-gsl"}) -- C++14
 add_requires("doctest", {alias = "doctest"})
-add_requires("xtensor", {alias = "xtensor"})
 
 if is_mode("coverage") then
     add_cxflags("-ftest-coverage", "-fprofile-arcs", {force = true})
 end
 
-target("Lds")
-    set_kind("static")
-    add_includedirs("include", {public = true})
-    add_files("src/*.cpp")
-    add_packages("ms-gsl")
-    add_packages("xtensor")
+-- header only
 
 target("test_lds")
     set_kind("binary")
-    add_deps("Lds")
     add_includedirs("include", {public = true})
     add_files("tests/*.cpp")
-    add_packages("ms-gsl", "doctest", "xtensor")
+    add_packages("ms-gsl", "doctest")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
