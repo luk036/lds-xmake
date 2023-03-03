@@ -1,14 +1,12 @@
 #pragma once
 
 #include <cassert>  // for assert
-#include <gsl/span> // for span
 #include <stddef.h> // for size_t
 #include <vector>   // for vector
 
 #include "lds.hpp" // for Vdcorput, Sphere
 
 namespace lds2 {
-using gsl::span;
 using std::vector;
 
 /**
@@ -25,7 +23,7 @@ public:
    *
    * @param[in] base
    */
-  explicit HaltonN(span<const size_t> base) {
+  explicit HaltonN(const vector<size_t> &base) {
     for (const auto &b : base) {
       this->vdcs.emplace_back(Vdcorput(b));
     }
