@@ -25,8 +25,8 @@ inline auto vdc(size_t k, const size_t base) -> double {
   auto res = 0.0;
   auto denom = 1.0;
   while (k != 0) {
-    denom *= base;
     const auto remainder = k % base;
+    denom *= base;
     k /= base;
     res += remainder / denom;
   }

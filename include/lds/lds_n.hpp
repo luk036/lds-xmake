@@ -1,6 +1,5 @@
 #pragma once
 
-#include <array>    // for array
 #include <cassert>  // for assert
 #include <gsl/span> // for span
 #include <stddef.h> // for size_t
@@ -9,9 +8,7 @@
 #include "lds.hpp" // for Vdcorput, Sphere
 
 namespace lds2 {
-// using Arr = xt::xarray<double, xt::layout_type::row_major>;
 using gsl::span;
-using std::array;
 using std::vector;
 
 /**
