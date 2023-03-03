@@ -2,7 +2,6 @@ set_languages("c++11")
 
 add_rules("mode.debug", "mode.release", "mode.coverage")
 -- add_requires("fmt", {alias = "fmt"})
-add_requires("microsoft-gsl", {alias = "ms-gsl"}) -- C++14
 add_requires("doctest", {alias = "doctest"})
 
 if is_mode("coverage") then
@@ -15,7 +14,7 @@ target("test_lds")
     set_kind("binary")
     add_includedirs("include", {public = true})
     add_files("tests/*.cpp")
-    add_packages("ms-gsl", "doctest")
+    add_packages("doctest")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
