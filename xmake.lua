@@ -9,8 +9,11 @@ if is_mode("coverage") then
 end
 
 -- header only
-set_warnings("all", "error")
-add_cxflags("-Wconversion", {force = true})
+if is_plat("linux") then
+    set_warnings("all", "error")
+    add_cxflags("-Wconversion", {force = true})
+end
+
 
 target("test_lds")
     set_kind("binary")
