@@ -9,6 +9,8 @@ if is_mode("coverage") then
 end
 
 -- header only
+set_warnings("all", "error")
+add_cxflags("-Wconversion", {force = true})
 
 target("test_lds")
     set_kind("binary")
